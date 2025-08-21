@@ -31,6 +31,22 @@ Create `.env` file in root with:
 ANTHROPIC_API_KEY=your_api_key_here
 ```
 
+### Code Quality Tools
+```bash
+# Format code with black and isort
+./scripts/format.sh
+uv run black .
+uv run isort .
+
+# Run linting checks
+./scripts/lint.sh
+uv run flake8 .
+uv run mypy .
+
+# Run all quality checks (format + lint)
+./scripts/quality.sh
+```
+
 ## Architecture Overview
 
 This is a **Course Materials RAG System** using tool-based search rather than traditional retrieve-then-generate patterns.
